@@ -24,6 +24,7 @@
         "foregroundImage": "./assets/playstore.png",
         "backgroundColor": "#1BD5FC"
       },
+      "versionCode": 1,
       "package": "com.shecky.zmanim"
     },
     "web": {
