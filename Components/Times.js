@@ -47,19 +47,24 @@ export default function Times() {
     }, [load]);
 
     if (load) {
-        const times = Object.keys(data.times).map(t => {
+        const releventTimes = ["chatzotNight", "alotHaShachar", "sunrise", "chatzot", "minchaGedola", "minchaKetana", "sunset"];
+        const timesArr = Object.keys(data.times).filter(time => releventTimes.includes(time))
+        const times = timesArr.map(t => {
             const fullTime = new Date(data.times[t]).toLocaleTimeString();
             const time = fullTime.split(':');
-            const convert = time[0] > 12 ? `${Number(time[0]) - 12 < 10 ? `0${time[0] - 12}` : `${time[0]}`}:${time[1]}:${time[2]} PM` : fullTime + ' AM'
 
-            return <Text key={t} style={styles.times}>{t}--{convert}</Text>
+            /**                   AM OR PM                      TIME GETS ZERO IN FRONT OR NOT              */
+            const convert = time[0] >= 12 ? `${Number(time[0]) - 12 < 10 && Number(time[0]) - 12 !== 0 ? `0${time[0] - 12}` : `${time[0]}`}:${time[1]}:${time[2]} PM` : fullTime + ' AM'
+
+            return <Text key={t} style={styles.times}>{t}---{convert}</Text>
         })
 
         return (<>
-            <Header data={data} />
-            <View>
-                {times}
-            </View>
+            <View style={styles.container}>
+                <Header data={data} />
+                <View >
+                    {times}
+                </View></View>
         </>
 
         )

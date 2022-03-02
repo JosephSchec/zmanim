@@ -5,24 +5,19 @@ export default StyleSheet.create({
         flex: 1,
         backgroundColor: 'white',
         alignItems: 'center',
+        alignContent: 'center',
         justifyContent: 'center',
         backgroundColor: '#000',
     },
 
     times: {
         textAlign: 'center',
-        justifyContent: 'center',
-        alignContent: 'center',
         color: '#7A0BC0',
-        fontSize: 20,
+        fontSize: 22,
+        marginBottom: 10,
     },
 
     head: {
-        flex: 1,
-        flexWrap: 'wrap',
-        flexDirection: 'row',
-        justifyContent: 'center',
-        alignContent: 'center',
         textAlign: 'center',
         color: '#7AaFC0',
         fontSize: 20,
@@ -33,7 +28,7 @@ export default StyleSheet.create({
         paddingBottom: 10,
         borderRadius: 7,
         borderWidth: 4,
-
-        borderColor: "#222a2a"
+        borderColor: "#3B2C85"
     },
+
 });
