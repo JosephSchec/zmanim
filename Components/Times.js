@@ -47,6 +47,7 @@ export default function Times() {
     }, [load]);
 
     if (load) {
+        console.log(data)
         const releventTimes = ["chatzotNight", "alotHaShachar", "sunrise", "chatzot", "minchaGedola", "minchaKetana", "sunset"];
         const timesArr = Object.keys(data.times).filter(time => releventTimes.includes(time))
         const times = timesArr.map(t => {
