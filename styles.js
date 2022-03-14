@@ -15,8 +15,11 @@ export default StyleSheet.create({
         textAlign: 'center',
         color: '#8f33ff',
         fontSize: 22,
-        textTransform:'capitalize',
+        textTransform: 'capitalize',
         marginBottom: 10,
+        padding: 5,
+        backgroundColor: '#01033d',
+        borderRadius:10
     },
 
     head: {

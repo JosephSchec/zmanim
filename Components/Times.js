@@ -4,6 +4,7 @@ import React, { useEffect, useState } from 'react'
 import getZip from '../getZip';
 import styles from '../styles';
 import Header from './Header.js';
+import convertToHebrew from '../convertToHebrew.js'
 
 export default function Times() {
     const [data, setData] = useState({});
@@ -47,17 +48,21 @@ export default function Times() {
     }, [load]);
 
     if (load) {
-        console.log(data)
-        const releventTimes = ["chatzotNight", "alotHaShachar", "sunrise", "chatzot", "minchaGedola", "minchaKetana", "sunset"];
+        const releventTimes = ["alotHaShachar", "misheyakirMachmir", "sunrise", "sofZmanShma", "sofZmanTfilla"
+            , "chatzot", "minchaGedola", "minchaKetana", "sunset"];
         const timesArr = Object.keys(data.times).filter(time => releventTimes.includes(time))
         const times = timesArr.map(t => {
+
             const fullTime = new Date(data.times[t]).toLocaleTimeString();
             const time = fullTime.split(':');
 
             /**                   AM OR PM                      TIME GETS ZERO IN FRONT OR NOT              */
             const convert = time[0] >= 12 ? `${Number(time[0]) - 12 < 10 && Number(time[0]) - 12 !== 0 ? `0${time[0] - 12}` : `${time[0]}`}:${time[1]}:${time[2]} PM` : fullTime + ' AM'
 
-            return <Text key={t} style={styles.times}>{t}---{convert}</Text>
+
+        t = convertToHebrew(t)
+
+            return <Text key={t} style={styles.times}>{convert}---{t}</Text>
         })
 
         return (<>
