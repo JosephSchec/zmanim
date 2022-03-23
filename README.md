@@ -4,3 +4,4 @@ The 4 API's used:
 * expo loaction
 * geonames to get location
 * hebcal zmanim and hebrew date apis
+* Sefaria for tefilla
