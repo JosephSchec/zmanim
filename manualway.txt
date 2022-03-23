@@ -1,0 +1,35 @@
+ const tefillaUrls = [
+    { url: 'https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Shacharit,_Preparatory_Prayers,_Modeh_Ani', c: 1 },
+    { url: 'https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Shacharit,_Preparatory_Prayers,_Netilat_Yadayim', c: 2 },
+    {}];
+
+
+
+tefillaUrls.forEach(async url => {
+          let tefilla = await fetchTefilla(url.url);
+          setTefillas((tefillas) => [...tefillas, { t: tefilla.he[0], count: url.c }])*/
+        const r = await fetchTefilla('https://www.sefaria.org/api/index/Siddur_Ashkenaz');
+        /*console.log(r.schema.nodes[0]['nodes'][0]['nodes'][0]['nodes'][0]['title']);
+        console.log(Object.keys(r.schema.nodes[0]['nodes'][0]['nodes'][0]['nodes'][0]))
+        //                weekday/shabbos  shachris    tefilla for mincha/mariv an extra node for shachris
+        console.log(r.schema.nodes[0]['nodes'][0]['nodes'][0]['nodes'][0].key)*/
+        /*let count = 0;
+        let object = { obj: r.schema.nodes[0]['nodes'][0]['nodes'][0]['nodes'], count: count++ };
+        //console.log(object)
+        for (const key in object.obj) {
+          if (Object.hasOwnProperty.call(object.obj, key)) {
+            const element = object.obj[key].key;
+            if (!element.includes('(')) {
+              let tefilla = await fetchTefilla(`https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Shacharit,_Preparatory_Prayers,_${element}`);
+              if (!tefilla.he) {
+
+              } else {
+                console.log(tefilla)
+                for (let i = 0; i < tefilla.he.length; i++) {
+
+                  setTefillas((tefillas) => [...tefillas, tefilla.he[i]])
+                }
+              }
+            }
+          }
+        }*/

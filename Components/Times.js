@@ -1,17 +1,17 @@
 
 import { View, Text } from 'react-native'
 import React, { useEffect, useState } from 'react'
-import getZip from '../getZip';
+import getZip from '../HelperFunctions/getZip';
+import convertToHebrew from '../HelperFunctions/convertToHebrew'
 import styles from '../styles';
 import Header from './Header.js';
-import convertToHebrew from '../convertToHebrew.js'
+import Footer from './Footer.js'
 
-export default function Times() {
+export default function Times({ navigation }) {
     const [data, setData] = useState({});
     const [load, setLoad] = useState(false);
 
     const today = new Date().toISOString().split('T')[0];
-
 
     useEffect(() => {
         (async () => {
@@ -37,9 +37,6 @@ export default function Times() {
                     setData(data);
                     setLoad(true);
                 }
-
-
-
             } catch (error) {
                 console.log(error);
             }
@@ -60,9 +57,10 @@ export default function Times() {
             const convert = time[0] >= 12 ? `${Number(time[0]) - 12 < 10 && Number(time[0]) - 12 !== 0 ? `0${time[0] - 12}` : `${time[0]}`}:${time[1]}:${time[2]} PM` : fullTime + ' AM'
 
 
-        t = convertToHebrew(t)
+            t = convertToHebrew(t)
 
             return <Text key={t} style={styles.times}>{convert}---{t}</Text>
+
         })
 
         return (<>
@@ -70,7 +68,9 @@ export default function Times() {
                 <Header data={data} />
                 <View >
                     {times}
-                </View></View>
+                </View>
+                <Footer data={data} />
+            </View>
         </>
 
         )
@@ -79,7 +79,7 @@ export default function Times() {
     return (<>
 
         <View>
-            <Text>{'searchin...'}</Text>
+            <Text>{'searching...'}</Text>
         </View>
     </>
 

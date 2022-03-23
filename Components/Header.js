@@ -1,6 +1,7 @@
-import { View, Text } from 'react-native'
+import {  Text } from 'react-native'
 import React, { useState, useEffect } from 'react'
-import styles from '../styles'
+import styles from '../styles';
+
 
 
 export default function Header(props) {
@@ -22,10 +23,8 @@ export default function Header(props) {
 
     return (
         <>
-            <View>
-                <Text style={styles.container}>  {data.date} / {hebDate}</Text>
-                <Text style={styles.head} >Zmanim For: {data.location.name} : </Text>
-            </View>
+            <Text style={styles.date}>  {data.date} / {hebDate}</Text>
+            <Text style={styles.head} >Zmanim For: {data.location.name} : </Text>
         </>
     )
 }

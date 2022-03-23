@@ -3,14 +3,15 @@ import { StyleSheet } from 'react-native';
 export default StyleSheet.create({
     container: {
         flex: 1,
-        color: 'red',
-        fontSize: 16,
         alignItems: 'center',
         alignContent: 'center',
         justifyContent: 'center',
         backgroundColor: '#000',
     },
-
+    date: {
+        color: 'red',
+        fontSize: 18,
+    },
     times: {
         textAlign: 'center',
         color: '#8f33ff',
@@ -19,7 +20,7 @@ export default StyleSheet.create({
         marginBottom: 10,
         padding: 5,
         backgroundColor: '#01033d',
-        borderRadius:10
+        borderRadius: 10
     },
 
     head: {
@@ -36,5 +37,14 @@ export default StyleSheet.create({
         borderWidth: 3,
         borderColor: "#5a00c7"
     },
+    scrollView: {
+        backgroundColor: '#01033d',
+    },
+    daven: {
+        fontSize: 16,
+        color: 'green',
+        marginBottom: 10,
+        padding: 5,
+    }
 
 });
