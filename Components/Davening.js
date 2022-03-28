@@ -6,8 +6,6 @@ import getDavening from '../HelperFunctions/getDavening';
 export default function Davening(props) {
  const tefillas=getDavening(props);
 
-  setTimeout(() => tefillas.reverse(), 1000);
-
   let tef = tefillas.map((t, i) => <Text key={i} style={styles.daven}>{t.replace(/[<b><\/b><small><\/small>ig]/gm, '')}</Text>);
 
   return (
