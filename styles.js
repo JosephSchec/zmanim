@@ -42,7 +42,7 @@ export default StyleSheet.create({
     },
     daven: {
         fontSize: 16,
-        color: 'green',
+        color: '#00cad9',
         marginBottom: 10,
         padding: 5,
     }
