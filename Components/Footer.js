@@ -1,7 +1,9 @@
-import { Button } from 'react-native'
+import { TouchableOpacity, Text } from 'react-native'
 import React from 'react'
 import { useNavigation } from '@react-navigation/native';
 import getTeffila from '../HelperFunctions/getTefilla';
+import styles from '../styles';
+
 
 export default function Footer(props) {
     const { data } = props;
@@ -9,6 +11,7 @@ export default function Footer(props) {
     const navigation = useNavigation();
     
     return (
-        <Button title={'Davening'} onPress={() => navigation.navigate('Davening', { data: data, name: tefillaTime.name })} />
-    )
+        <TouchableOpacity  onPress={() => navigation.navigate('Davening', { data: data, name: tefillaTime.name })} >
+            <Text style={styles.footer}>Davening</Text>
+   </TouchableOpacity> )
 }

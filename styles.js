@@ -42,9 +42,17 @@ export default StyleSheet.create({
     },
     daven: {
         fontSize: 18,
+        fontWeight: '900',
         color: '#00cad9',
         marginBottom: 10,
         padding: 5,
+    },
+    footer: {
+        backgroundColor: '#00cad9',
+        fontSize: 16,
+        padding: 8,
+        fontWeight:'600',
+        textAlign:'center',
+        borderRadius: 7
     }
-
 });
