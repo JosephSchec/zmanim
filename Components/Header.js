@@ -1,4 +1,4 @@
-import {  Text } from 'react-native'
+import { Text } from 'react-native'
 import React, { useState, useEffect } from 'react'
 import styles from '../styles';
 
@@ -7,6 +7,8 @@ import styles from '../styles';
 export default function Header(props) {
     const { data } = props;
     const [hebDate, setHebdate] = useState('');
+    const [omer, setOmer] = useState('');
+
     useEffect(() => {
         (async () => {
             try {
@@ -17,6 +19,10 @@ export default function Header(props) {
                 }
                 const heb = await r.json();
                 setHebdate(heb.hebrew)
+                if (heb.events.length ) {
+                    console.log(heb.events[heb.events.length - 1])
+                    setOmer(heb.events[heb.events.length - 1])
+                }
             } catch (e) { console.log(e) }
         })();
     }, []);
@@ -24,6 +30,8 @@ export default function Header(props) {
     return (
         <>
             <Text style={styles.date}>  {data.date} / {hebDate}</Text>
+            <Text style={styles.date}> {omer}</Text>
+
             <Text style={styles.head} >Zmanim For: {data.location.name} : </Text>
         </>
     )
