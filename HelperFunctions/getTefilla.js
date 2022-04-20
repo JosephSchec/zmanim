@@ -9,7 +9,7 @@ export default function getTeffila(data) {
             name: 'Shacharis',
             start: 'https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Shacharit,_Preparatory_Prayers,_Modeh_Ani',
             end: 'https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Minchah,_Ashrei',
-            removeArr: ['_Tefillin', '_Tallit', '_Tzitzit', '_Kiyor', '_Terumat_HaDeshen', '_Birkat Kohanim'
+            removeArr: ['_Tefillin', '_Tallit', '_Tzitzit', '_Kiyor', '_Terumat_HaDeshen','_Ketoret','_Order_of_the_Temple_Service', '_Birkat Kohanim'
                 , '_Torah_Reading', '_Minchah', '_Korbanot_(Israel)', '_Vidui_and_13_Middot',
                 '_Kaddish_DeRabbanan', '_Mourner\'s_Kaddish', '_Kaddish_Shalem', '_Half_Kaddish', '_Psalm_130']
         }
@@ -19,7 +19,7 @@ export default function getTeffila(data) {
             name: 'Mincha',
             start: 'https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Minchah,_Ashrei',
             end: 'https://www.sefaria.org/api/texts/Siddur_Ashkenaz,_Weekday,_Maariv,_Vehu_Rachum',
-            removeArr: ['_Vidui_and_13_Middot', '_Kaddish_DeRabbanan', '_Mourner\'s_Kaddish', '_Kaddish_Shalem', '_Half_Kaddish']
+            removeArr: ['_Keduasha','_Vidui_and_13_Middot', '_Kaddish_DeRabbanan', '_Mourner\'s_Kaddish', '_Kaddish_Shalem', '_Half_Kaddish']
         }
     }
     else {

@@ -17,11 +17,10 @@ export default function Header(props) {
                 if (!r.ok) {
                     throw new Error('no date found');
                 }
-                const heb = await r.json();
-                setHebdate(heb.hebrew)
-                if (heb.events.length ) {
-                    console.log(heb.events[heb.events.length - 1])
-                    setOmer(heb.events[heb.events.length - 1])
+                const dateInfo = await r.json();
+                setHebdate(dateInfo.hebrew)
+                if (dateInfo.events.length ) {
+                    setOmer(dateInfo.events[dateInfo.events.length - 1])
                 }
             } catch (e) { console.log(e) }
         })();
