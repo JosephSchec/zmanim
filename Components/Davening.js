@@ -7,7 +7,7 @@ export default function Davening(props) {
   const tefillas = getDavening(props);
 
   let tef = tefillas.map((t, i) => {
-    return <Text key={i} style={styles.daven}>{t.replace(/[<b><\/b><small><\/small>]/gmi, '')}</Text>
+    return <Text key={i} style={styles.daven}>{t.replace(/[a-z]|<|\/|>|-|"|=/gm, '')}</Text>
   });
   
 

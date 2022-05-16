@@ -53,7 +53,6 @@ export default function getDavening(props) {
                 }
                 else {
                     curTef = await fetchTefilla(`https://www.sefaria.org/api/texts/${nextTef}`);
-                    console.log(nextTef)
                     // all hebrew
                     for (let j = 0; j < curTef.he.length; j++) {
                         if (!curTef.he[j].match(/<small>(.*)<\/small>/gmi)) {

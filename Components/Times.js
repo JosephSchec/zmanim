@@ -78,8 +78,8 @@ export default function Times({ navigation }) {
 
     return (<>
 
-        <View>
-            <Text>{'searching...'}</Text>
+        <View style={styles.container}>
+            <Text style={styles.date}>{'Searching...'}</Text>
         </View>
     </>
 
