@@ -1,5 +1,5 @@
 
-import { View, Text } from 'react-native'
+import { View, Text, FlatList, SafeAreaView } from 'react-native'
 import React, { useEffect, useState } from 'react'
 import getZip from '../HelperFunctions/getZip';
 import convertToHebrew from '../HelperFunctions/convertToHebrew'
@@ -59,16 +59,25 @@ export default function Times({ navigation }) {
 
             t = convertToHebrew(t)
 
-            return <Text key={t} style={styles.times}>{convert}---{t}</Text>
+            return { convert, t }
 
         })
 
+        const render = ({ item }) => {
+            return (<View style={styles.timeBox}>
+
+                <Text style={styles.times}>{item.convert}</Text>
+                <Text style={styles.times}>---{item.t}</Text>
+            </View>)
+        }
         return (<>
             <View style={styles.container}>
                 <Header data={data} />
-                <View >
-                    {times}
-                </View>
+                <SafeAreaView style={styles.timesContainer}>
+
+                    <FlatList data={times} renderItem={render} keyExtractor={item => item.t} />
+                </SafeAreaView>
+
                 <Footer data={data} />
             </View>
         </>
