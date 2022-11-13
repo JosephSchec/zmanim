@@ -55,10 +55,14 @@ export default StyleSheet.create({
 
     footer: {
         backgroundColor: '#00cad9',
-        fontSize: 16,
-        padding: 8,
+        fontSize: 18,
+        padding: 4,
         fontWeight: '600',
         textAlign: 'center',
-        borderRadius: 7
+        margin: 1,
+        flex: 1,
+        fontWeight: "bold",
+        color: "#01033d"
+
     }
 });

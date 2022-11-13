@@ -69,7 +69,7 @@ export default function Times({ navigation }) {
                 <Text style={styles.times}>{item.convert}</Text>
                 <Text style={styles.times}>---{item.t}</Text>
             </View>)
-        }
+        } 
         return (<>
             <View style={styles.container}>
                 <Header data={data} />
