@@ -9,7 +9,7 @@ export default StyleSheet.create({
         backgroundColor: '#000',
     },
     date: {
-        color: 'red',
+        color: '#ECDBBA',
         fontSize: 18,
     },
     timeBox: {
@@ -17,13 +17,15 @@ export default StyleSheet.create({
         display: "flex",
         flexDirection: "row-reverse",
         justifyContent: "center",
-        backgroundColor: '#01033d',
+        backgroundColor: '#3F3B6C',
         marginBottom: 10,
-        padding: 10,
-        borderRadius: 10,
+        marginRight: 10,
+        marginLeft: 10,
+        padding: 10, 
+        borderRadius: 7,
     },
     times: {
-        color: '#8f33ff',
+        color: '#E7F6F2',
         textAlign: 'center',
         fontSize: 22,
         textTransform: 'capitalize',
@@ -37,7 +39,7 @@ export default StyleSheet.create({
 
     head: {
         textAlign: 'center',
-        color: '#0fe0f7',
+        color: '#0F3460',
         fontSize: 20,
         marginBottom: 20,
         marginTop: 5,
@@ -47,14 +49,15 @@ export default StyleSheet.create({
         paddingBottom: 7,
         borderRadius: 7,
         borderWidth: 3,
-        borderColor: "#5a00c7"
+        borderColor: "#3F3B6C",
+        backgroundColor: '#E7F6F2',
     },
     scrollView: {
         backgroundColor: '#01033d',
     },
 
     footer: {
-        backgroundColor: '#00cad9',
+        backgroundColor: '#01033d',
         fontSize: 18,
         padding: 4,
         fontWeight: '600',
@@ -62,7 +65,7 @@ export default StyleSheet.create({
         margin: 1,
         flex: 1,
         fontWeight: "bold",
-        color: "#01033d"
+        color: "#E7F6F2"
 
     }
 });

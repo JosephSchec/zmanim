@@ -13,7 +13,7 @@ export default function Davening(props) {
       body: {
         fontSize: 18,
         fontWeight: '300',
-        color: '#00cad9',
+        color: '#ECDBBA',
         marginBottom: 10,
         padding: 5
       },
