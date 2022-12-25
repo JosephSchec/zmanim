@@ -1,14 +1,14 @@
 {
   "expo": {
-    "name": "zmanim",
-    "slug": "zmanim",
-    "version": "2.1.1",
+    "name": "Daven Times",
+    "slug": "Daven Times",
+    "version": "2.11.1",
     "orientation": "portrait",
     "icon": "./assets/playstore.png",
     "splash": {
       "image": "./assets/playstore.png",
       "resizeMode": "contain",
-      "backgroundColor": "#1BD5FC"
+      "backgroundColor": "#2D4263"
     },
     "updates": {
       "fallbackToCacheTimeout": 0
@@ -22,7 +22,7 @@
     "android": {
       "adaptiveIcon": {
         "foregroundImage": "./assets/playstore.png",
-        "backgroundColor": "#1BD5FC"
+        "backgroundColor": "#2D4263"
       },
       "versionCode": 1,
       "package": "com.shecky.zmanim"

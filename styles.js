@@ -21,7 +21,7 @@ export default StyleSheet.create({
         marginBottom: 10,
         marginRight: 10,
         marginLeft: 10,
-        padding: 10, 
+        padding: 10,
         borderRadius: 7,
     },
     times: {
@@ -29,7 +29,6 @@ export default StyleSheet.create({
         textAlign: 'center',
         fontSize: 22,
         textTransform: 'capitalize',
-
     },
     timesContainer: {
         textAlign: 'center',
@@ -53,11 +52,11 @@ export default StyleSheet.create({
         backgroundColor: '#E7F6F2',
     },
     scrollView: {
-        backgroundColor: '#01033d',
+        backgroundColor: '#2D4263',
     },
 
     footer: {
-        backgroundColor: '#01033d',
+        backgroundColor: '#E7F6F2',
         fontSize: 18,
         padding: 4,
         fontWeight: '600',
@@ -65,7 +64,7 @@ export default StyleSheet.create({
         margin: 1,
         flex: 1,
         fontWeight: "bold",
-        color: "#E7F6F2"
+        color: "#3F3B6C"
 
     }
 });

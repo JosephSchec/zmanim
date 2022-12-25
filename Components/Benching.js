@@ -29,7 +29,7 @@ export default function Benching() {
             body: {
                 fontSize: 18,
                 fontWeight: '300',
-                color: '#00cad9',
+                color: '#ECDBBA',
                 marginBottom: 10,
                 padding: 5
             },
@@ -39,7 +39,7 @@ export default function Benching() {
         }), [])
     let bench = benchingState.map((b, i) => {
         let text = b.replace(/[\u0591-\u05AF]/gm, '')
-        return <RenderHTML tagsStyles={benching} key={i} contentWidth={width} source={{ html: text }} />
+        return (!text.includes(['</small>'])&&<RenderHTML tagsStyles={benching} key={i} contentWidth={width} source={{ html: text }} />)
     });
     return (
         <ScrollView style={styles.scrollView} >

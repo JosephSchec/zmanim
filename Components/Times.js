@@ -9,7 +9,6 @@ import Footer from './Footer.js'
 
 export default function Times({ navigation }) {
     const [data, setData] = useState({});
-    const [load, setLoad] = useState(false);
 
     const today = new Date().toISOString().split('T')[0];
 
@@ -18,33 +17,27 @@ export default function Times({ navigation }) {
             try {
 
                 let gotZip = await getZip();
-
                 /*** Get Data */
                 let r = await fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=10314&date=${today}`);
-                if (gotZip.postalCodes) {
-                    if (gotZip.postalCodes.length) {
-                        r = await fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=${gotZip.postalCodes[0].postalCode}&date=${today}`)
-
-                    }
+                if (Array.isArray(gotZip.postalCodes)) {
+                    r = await fetch(`https://www.hebcal.com/zmanim?cfg=json&zip=${gotZip.postalCodes[0].postalCode}&date=${today}`)
                 }
                 if (!r.ok) {
                     throw new Error(`ERR: ${r.status} ${r.statusText} `)
                 }
                 const data = await r.json();
                 setData(data);
-                setLoad(true);
                 return async () => {
                     setData(data);
-                    setLoad(true);
                 }
             } catch (error) {
                 console.log(error);
             }
 
         })();
-    }, [load]);
+    }, [data]);
 
-    if (load) {
+    if (data.times) {
         const releventTimes = ["alotHaShachar", "misheyakirMachmir", "sunrise", "sofZmanShma", "sofZmanTfilla"
             , "chatzot", "minchaGedola", "minchaKetana", "sunset"];
         const timesArr = Object.keys(data.times).filter(time => releventTimes.includes(time))
@@ -69,7 +62,7 @@ export default function Times({ navigation }) {
                 <Text style={styles.times}>{item.convert}</Text>
                 <Text style={styles.times}>---{item.t}</Text>
             </View>)
-        } 
+        }
         return (<>
             <View style={styles.container}>
                 <Header data={data} />

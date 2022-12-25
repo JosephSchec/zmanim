@@ -23,7 +23,7 @@ export default function Davening(props) {
     }), [])
   let tef = tefillas.map((t, i) => {
     let text = t.replace(/[\u0591-\u05AF]/gm, '')
-    return <RenderHTML tagsStyles={daven} key={i} contentWidth={width} source={{ html: text }} />
+    return (!text.includes(['</small>']) && <RenderHTML tagsStyles={daven} key={i} contentWidth={width} source={{ html: text }} />)
   });
 
 
