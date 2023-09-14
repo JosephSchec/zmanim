@@ -1,6 +1,5 @@
 ## zmanim
-### After combining 4 APIS I created my first APK with React-Native / using Expo-Cli :
-#### The 4 API's used:
+#### A zmanim app with one click to davening:
 * expo loaction => used to get the users [lon , lat]
 * geonames => used to get postal code nearest to users location 
 * hebcal zmanim and hebrew date apis => each based off the recived location
