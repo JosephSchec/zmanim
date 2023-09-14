@@ -1,7 +1,7 @@
 {
   "expo": {
     "name": "Daven Times",
-    "slug": "Daven Times",
+    "slug": "Daven-Times",
     "version": "2.11.1",
     "orientation": "portrait",
     "icon": "./assets/playstore.png",
@@ -29,6 +29,11 @@
     },
     "web": {
       "favicon": "./assets/playstore.png"
+    },
+    "extra": {
+      "eas": {
+        "projectId": "2e2f233b-4f91-4d2f-a8cd-291b2d5ce6b3"
+      }
     }
   }
 }
